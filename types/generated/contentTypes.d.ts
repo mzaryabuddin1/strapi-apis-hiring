@@ -412,6 +412,31 @@ export interface ApiApplicationApplication extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiBantuBantu extends Struct.SingleTypeSchema {
+  collectionName: 'bantus';
+  info: {
+    displayName: 'Bantu';
+    pluralName: 'bantus';
+    singularName: 'bantu';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    asdasd: Schema.Attribute.String;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::bantu.bantu'> &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiCategoryCategory extends Struct.CollectionTypeSchema {
   collectionName: 'categories';
   info: {
@@ -1042,6 +1067,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
       'api::application.application': ApiApplicationApplication;
+      'api::bantu.bantu': ApiBantuBantu;
       'api::category.category': ApiCategoryCategory;
       'api::job.job': ApiJobJob;
       'api::profile.profile': ApiProfileProfile;

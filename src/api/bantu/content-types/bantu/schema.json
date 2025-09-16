@@ -1,0 +1,18 @@
+{
+  "kind": "singleType",
+  "collectionName": "bantus",
+  "info": {
+    "singularName": "bantu",
+    "pluralName": "bantus",
+    "displayName": "Bantu"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "asdasd": {
+      "type": "string"
+    }
+  }
+}
