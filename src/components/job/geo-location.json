@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_job_geo_locations",
+  "info": {
+    "displayName": "geo.location",
+    "icon": "pinMap"
+  },
+  "options": {},
+  "attributes": {
+    "address": {
+      "type": "string",
+      "required": true
+    },
+    "lat": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    },
+    "lng": {
+      "type": "decimal",
+      "required": true,
+      "default": 0
+    }
+  },
+  "config": {}
+}

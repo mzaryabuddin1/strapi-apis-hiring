@@ -1,0 +1,60 @@
+{
+  "kind": "collectionType",
+  "collectionName": "jobs",
+  "info": {
+    "singularName": "job",
+    "pluralName": "jobs",
+    "displayName": "Job"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "minLength": 2,
+      "required": true
+    },
+    "description": {
+      "type": "richtext",
+      "required": false
+    },
+    "jobStatus": {
+      "type": "enumeration",
+      "required": true,
+      "default": "draft",
+      "enum": [
+        "draft",
+        "published",
+        "archived"
+      ]
+    },
+    "openings": {
+      "type": "boolean",
+      "required": true,
+      "default": true
+    },
+    "offer": {
+      "type": "integer",
+      "required": true,
+      "default": 0
+    },
+    "location": {
+      "type": "component",
+      "component": "job.geo-location",
+      "repeatable": false,
+      "required": true
+    },
+    "category": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::category.category"
+    },
+    "users_permissions_user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
